@@ -1,0 +1,15 @@
+# ENV
+.env*
+!.env.example
+
+# Python
+__pycache__/
+.ruff_cache/
+test_bot.py
+.venv/
+venv/
+*.py[cod]
+
+# Logs
+*.log
+logs/

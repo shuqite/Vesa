@@ -1,0 +1,26 @@
+services:
+  bot:
+    build: .
+    container_name: vesa
+    network_mode: "host"
+    env_file: ".env"
+    depends_on:
+      - libretranslate
+    volumes:
+      - ./src:/app/src
+      - ./main.py:/app/main.py
+      - ./.env:/app/.env
+    restart: unless-stopped
+  libretranslate:
+    container_name: libretranslate
+    image: libretranslate/libretranslate:latest
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    tty: true
+    environment:
+      - LT_LOAD_ONLY=en,ru # add your languages there
+    volumes:
+      - libretranslate_models:/home/libretranslate/.local
+volumes:
+  libretranslate_models:
