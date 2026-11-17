@@ -5,10 +5,12 @@ Vesa is Discord bot, that uses local LLMs to chat and talk with you
 
 ## Installation guide
 1. Copy .env.example to .env and fill it with your parameters
-2. `ollama serve
-ollama pull picked_model_here
-docker compose build
-docker compose up (-d optionally)`
+2. ```bash
+   ollama serve 
+   ollama pull picked_model_here
+   docker compose build
+   docker compose up (-d optionally)
+   ```
 
 ### Dependencies:
 - Docker Compose
