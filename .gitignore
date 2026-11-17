@@ -14,7 +14,7 @@ venv/
 *.py[cod]
 
 # Images
-Images/*.png
+*.png
 
 # Logs
 *.log
