@@ -1,3 +1,6 @@
+# not working now
+start.sh
+
 # ENV
 .env*
 !.env.example
@@ -9,6 +12,9 @@ test_bot.py
 .venv/
 venv/
 *.py[cod]
+
+# Images
+Images/*.png
 
 # Logs
 *.log

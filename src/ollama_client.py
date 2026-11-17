@@ -16,7 +16,7 @@ class Ollama_Client:
         self.vesa_prompt = settings.ollama.llm_prompt
         self.client = AsyncClient(host=settings.ollama.url)
 
-    async def generate_response(self, msg:Dict[str,str]) -> str:
+    async def generate_response(self, msg:Dict) -> str:
         logger.info(f"prompt: {self.vesa_prompt} model: {self.vesa_model}")
 
         try:

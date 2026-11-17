@@ -1,6 +1,6 @@
 [project]
 name = "Vesa"
-version = "0.1.dev1"
+version = "0.1"
 description = "Discord bot using local LLMs"
 authors = [
     {name = "Shuqi (shuqite)"}
@@ -9,10 +9,10 @@ readme = "README.md"
 requires-python = ">=3.12, <4.0"
 
 [tool.poetry.dependencies]
-asyncio = "^4.0.0"
 disnake = "^2.12.2"
 dotenv = "^0.9.9"
 ollama = "^0.6.3"
 pynacl = "^1.6.2"
 dave-py = "^1.1.0"
 deep-translator = "^1.11.4"
+python-dotenv = "^1.2.4"

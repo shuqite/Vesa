@@ -17,7 +17,7 @@ class OllamaConfig:
 
 @dataclass(frozen=True)
 class TranslateConfig:
-    status: bool = bool(os.getenv("TRANSLATE",""))
+    status: bool = os.getenv("TRANSLATE","").lower() in ("yes","y","true")
     language: str = os.getenv("LANG","")
     url: str = os.getenv("LIBRE_TRANSLATE_URL","")
 
@@ -26,6 +26,5 @@ class Config:
     discord: DiscordConfig = DiscordConfig()
     ollama: OllamaConfig = OllamaConfig()
     translator: TranslateConfig = TranslateConfig()
-
 
 settings = Config()

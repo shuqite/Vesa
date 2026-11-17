@@ -13,8 +13,8 @@ ENV POETRY_VIRTUALENVS_CREATE=false
 COPY pyproject.toml poetry.lock ./
 RUN poetry install --no-interaction --no-ansi --no-root --no-directory
 
+COPY Images/ ./Images
 COPY main.py ./
 COPY src/ ./src/
-COPY .env ./
 
 CMD ["python", "main.py"]

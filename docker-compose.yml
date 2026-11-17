@@ -10,6 +10,7 @@ services:
       - ./src:/app/src
       - ./main.py:/app/main.py
       - ./.env:/app/.env
+      - ./Images:/app/Images
     restart: unless-stopped
   libretranslate:
     container_name: libretranslate

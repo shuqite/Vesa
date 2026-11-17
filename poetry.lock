@@ -244,18 +244,6 @@ typing_extensions = {version = ">=4.16.0", markers = "python_version < \"3.15\""
 trio = ["trio (>=0.32.0)"]
 
 [[package]]
-name = "asyncio"
-version = "4.0.0"
-description = "Deprecated backport of asyncio; use the stdlib package instead"
-optional = false
-python-versions = ">=3.4"
-groups = ["main"]
-files = [
-    {file = "asyncio-4.0.0-py3-none-any.whl", hash = "sha256:c1eddb0659231837046809e68103969b2bef8b0400d59cfa6363f6b5ed8cc88b"},
-    {file = "asyncio-4.0.0.tar.gz", hash = "sha256:570cd9e50db83bc1629152d4d0b7558d6451bb1bfd5dfc2e935d96fc2f40329b"},
-]
-
-[[package]]
 name = "attrs"
 version = "26.1.0"
 description = "Classes Without Boilerplate"
@@ -1768,4 +1756,4 @@ propcache = ">=0.2.1"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12, <4.0"
-content-hash = "3059e990adeb64e7133d97e075cc5f2876849f0258c3b171708f80f841a6f268"
+content-hash = "2e350d683abbbd7f5688ae28c5dc93a31bb9d8a2df94ac3418d31e6f2b92f669"
