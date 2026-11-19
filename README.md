@@ -1,4 +1,4 @@
-### Hey. It's Shuqi! And there is my project - Project Vesa.
+### Use this repo while vesa-core and vesa-discord-module are not developed
 
 ## About Vesa
 Vesa is Discord bot, that uses local LLMs to chat and talk with you
