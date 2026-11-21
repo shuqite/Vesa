@@ -1,6 +1,8 @@
+import logging
+
 import disnake
 from disnake.ext import commands
-import logging
+
 from src.config import settings
 from src.ollama_client import Ollama_Client
 from src.translator import Translate_prompt
@@ -42,13 +44,15 @@ async def get_image(ctx):
         att for att in ctx.message.attachments
         if att.content_type and att.content_type.startswith("image/")
     ]
-    try: image = images[0]
-    except IndexError: image=None
-    if image != None:
-        await image.save(f"Images/{image.filename}")
-        img_path=f"Images/{image.filename}"
-        return img_path
-    else: return image
+    try:
+        image = images[0]
+        image_bytes = await image.read()
+    except IndexError: image_bytes = None
+    # if image != None:
+    #     await image.save(f"Images/{image.filename}")
+    #     img_path=f"Images/{image.filename}"
+    #     return img_path
+    return image_bytes
 
 @bot.command()
 async def chat(ctx):
@@ -59,7 +63,7 @@ async def chat(ctx):
     logger.info(user_image)
     if settings.translator.status == True:
         user_text = await Translate_prompt(user_text)
-    prompt = f"You are talking with {user_name}. Message: {user_text}"
+    prompt = f"You are talking with someone whose nickname is {user_name}. Message: {user_text}"
     message = {
         "role":"user",
         "content":prompt,

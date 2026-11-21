@@ -1,8 +1,9 @@
+import logging
 from asyncio import to_thread
 
 from deep_translator import LibreTranslator
+
 from src.config import settings
-import logging
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"

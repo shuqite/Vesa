@@ -1,9 +1,9 @@
-from src.config import settings
-from ollama import AsyncClient
 import logging
-from typing import Any, Dict, List, Optional
 
-from src.translator import Translate_prompt, Translate_response
+from ollama import AsyncClient
+
+from src.config import settings
+from src.translator import Translate_response
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
@@ -16,7 +16,7 @@ class Ollama_Client:
         self.vesa_prompt = settings.ollama.llm_prompt
         self.client = AsyncClient(host=settings.ollama.url)
 
-    async def generate_response(self, msg:Dict) -> str:
+    async def generate_response(self, msg:dict) -> str:
         logger.info(f"prompt: {self.vesa_prompt} model: {self.vesa_model}")
 
         try:

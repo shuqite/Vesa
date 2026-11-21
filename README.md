@@ -19,7 +19,7 @@ Vesa is Discord bot, that uses local LLMs to chat and talk with you
 
 
 ## Versions:
-* 0.1 (current) - just chatting w/out context (images working) and docker compose
+* 0.1 - just chatting w/out context (images working) and docker compose
 * 0.3 - voice chats (tts response to chat message)
 * 0.5 - voice chats (tts + stt) w/out context
 * 0.x - chatting (mb voice too) with context
