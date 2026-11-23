@@ -11,25 +11,29 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-async def Translate_prompt(prompt: str) -> str:
+__prompt_translator = LibreTranslator(
+    custom_url=f"{settings.translator.url}",
+    api_key="dummy",
+    source="auto",
+    target="en"
+)
+__response_translator = LibreTranslator(
+    custom_url=f"{settings.translator.url}",
+    api_key="dummy",
+    source="en",
+    target=settings.translator.language
+)
+
+async def translate_prompt(prompt: str) -> str:
     translated = await to_thread(
-        lambda: LibreTranslator(
-            custom_url=f"{settings.translator.url}",
-            api_key="dummy",
-            source="auto",
-            target="en").translate(prompt)
+        __prompt_translator.translate, prompt
     )
     logger.info(f"Translated prompt: {translated}")
     return translated
 
-async def Translate_response(response: str) -> str:
-    lang = settings.translator.language
+async def translate_response(response: str) -> str:
     translated = await to_thread(
-        lambda: LibreTranslator(
-            custom_url=f"{settings.translator.url}",
-            api_key="dummy",
-            source="en",
-            target=f"{lang}").translate(response)
+        __response_translator.translate, response
     )
     logger.info(f"response: {response}, translated response: {translated}")
     return translated

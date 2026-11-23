@@ -1,3 +1,4 @@
+
 import os
 from dataclasses import dataclass
 
@@ -14,11 +15,12 @@ class OllamaConfig:
     model: str = os.getenv("LLM","")
     llm_prompt: str = os.getenv("MAIN_PROMPT","")
     url: str = os.getenv("OLLAMA_URL","")
+    think: bool = os.getenv("THINK","").lower() in ("yes","y","true")
 
 @dataclass(frozen=True)
 class TranslateConfig:
     status: bool = os.getenv("TRANSLATE","").lower() in ("yes","y","true")
-    language: str = os.getenv("LANG","")
+    language: str = os.getenv("TARGET_LANG","")
     url: str = os.getenv("LIBRE_TRANSLATE_URL","")
 
 @dataclass(frozen=True)

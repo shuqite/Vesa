@@ -724,20 +724,6 @@ speed = ["aiohttp[speedups]", "orjson (>=3.6,<4.0)"]
 voice = ["audioop-lts (>=0.2.1) ; python_version >= \"3.13\"", "dave-py (>=1.0,<2.0)", "pynacl (>=1.5.0,<1.7)"]
 
 [[package]]
-name = "dotenv"
-version = "0.9.9"
-description = "Deprecated package"
-optional = false
-python-versions = "*"
-groups = ["main"]
-files = [
-    {file = "dotenv-0.9.9-py2.py3-none-any.whl", hash = "sha256:29cf74a087b31dafdb5a446b6d7e11cbce8ed2741540e2339c69fbef92c94ce9"},
-]
-
-[package.dependencies]
-python-dotenv = "*"
-
-[[package]]
 name = "frozenlist"
 version = "1.8.0"
 description = "A list-like structure which implements collections.abc.MutableSequence"
@@ -1756,4 +1742,4 @@ propcache = ">=0.2.1"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12, <4.0"
-content-hash = "2e350d683abbbd7f5688ae28c5dc93a31bb9d8a2df94ac3418d31e6f2b92f669"
+content-hash = "5003201b0fb5620fe1817dc21cc27c7fc25e4d28454f2c7c3fe56d1283f067b8"
